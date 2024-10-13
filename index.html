@@ -69,6 +69,12 @@
             <label for="quantity">Quantidade:</label>
             <input type="number" id="quantity" name="quantity" value="1" min="1">
 
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
             <button id="add-to-cart">Adicionar ao Carrinho</button>
         </div>
 
@@ -101,9 +107,9 @@
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-       (function(){
-           emailjs.init("Cassiano"); // Substitua pelo seu User ID do EmailJS
-       })();
+        (function(){
+            emailjs.init("Cassiano"); // Substitua pelo seu User ID do EmailJS
+        })();
     </script>
     <script src="script.js"></script>
 </body>
