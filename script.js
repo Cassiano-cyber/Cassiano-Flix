@@ -5,8 +5,16 @@ const totalPriceElement = document.getElementById('total-price');
 
 // Adiciona um evento de clique ao botão "Adicionar ao Carrinho"
 document.getElementById('add-to-cart').addEventListener('click', () => {
-    const product = document.getElementById('product').value;
-    const quantity = parseInt(document.getElementById('quantity').value, 10);
+    const productElement = document.getElementById('product');
+    const quantityElement = document.getElementById('quantity');
+    
+    if (!productElement || !quantityElement) {
+        console.error('Elemento não encontrado');
+        return;
+    }
+
+    const product = productElement.value;
+    const quantity = parseInt(quantityElement.value, 10);
 
     if (quantity <= 0) {
         alert('Por favor, selecione uma quantidade válida.');
@@ -20,13 +28,18 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 
 // Atualiza a visualização do carrinho
 function updateCart() {
+    if (!cartItemsList || !totalPriceElement) {
+        console.error('Elemento não encontrado');
+        return;
+    }
+
     cartItemsList.innerHTML = '';
     let total = 0;
 
     cart.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.quantity}x ${item.product}`;
-        
+
         // Animação de entrada para o item do carrinho
         li.style.opacity = 0; // Torna invisível inicialmente
         li.style.transform = 'translateY(-10px)'; // Inicia deslocado
@@ -53,11 +66,18 @@ document.getElementById('place-order').addEventListener('click', () => {
         alert('Seu carrinho está vazio!');
         return;
     }
-    
-    const orderDetails = cart.map(item => `${item.quantity} x ${item.product}`).join(', ');
-    const name = document.getElementById('customer-name').value;
-    const email = document.getElementById('customer-email').value;
 
+    const orderDetails = cart.map(item => `${item.quantity} x ${item.product}`).join(', ');
+    const nameElement = document.getElementById('customer-name');
+    const emailElement = document.getElementById('customer-email');
+
+    if (!nameElement || !emailElement) {
+        console.error('Elemento não encontrado');
+        return;
+    }
+
+    const name = nameElement.value;
+    const email = emailElement.value;
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
     const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
 
