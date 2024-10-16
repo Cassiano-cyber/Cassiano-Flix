@@ -12,6 +12,7 @@ body {
     color: #333;
     font-size: 130%;
     -webkit-text-size-adjust: 100%; /* Adicionado para compatibilidade */
+    text-size-adjust: 100%; /* Adicionado para compatibilidade */
 }
 
 /* HEADER */
