@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explosão de Sabores - Sistema de Pedidos</title>
+    <meta name="description" content="Descubra nossos salgados personalizados, salgados veganos e pizzas deliciosas na Explosão de Sabores.">
+    <meta name="keywords" content="salgados, veganos, pizzas, Explosão de Sabores">
+    <meta name="author" content="Explosão de Sabores">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="dramaturgia-cu-header">Explosão de Sabores</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#offers">Ofertas</a></li>
+                <li><a href="#order">Pedido</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h2 class="dramaturgia-cu-subheader">Bem-vindo à Explosão de Sabores!</h2>
+        <p>Descubra nossos salgados personalizados, salgados veganos e pizzas deliciosas.</p>
+        <img src="https://img.restaurantguru.com/rac9-Explosao-De-Sabores-menu.jpg" alt="Banner de Explosão de Sabores" class="loaded">
+    </section>
+    <section id="products">
+        <h2 class="dramaturgia-cu-subheader">Nossos Produtos</h2>
+        <div class="product-category">
+            <h3 class="dramaturgia-cu-category">Salgados Personalizados</h3>
+            <a href="https://seusite.com/salgados-personalizados" target="_blank">
+                <img src="https://manealimentos.com.br/wp-content/uploads/2020/09/salgado-esquina-comprar.jpg" alt="Salgados Personalizados" class="loaded">
+            </a>
+            <p>Receita: Misture os ingredientes escolhidos e molde os salgados ao seu gosto.</p>
+        </div>
+        <div class="product-category">
+            <h3 class="dramaturgia-cu-category">Salgados Veganos</h3>
+            <a href="https://seusite.com/salgados-veganos" target="_blank">
+                <img src="https://th.bing.com/th/id/OIP.0d4JLumHvADzzxQK83BGBwHaE8?rs=1&pid=ImgDetMain" alt="Salgados Veganos" class="loaded">
+            </a>
+            <p>Receita: Utilize ingredientes veganos frescos para criar salgados deliciosos e saudáveis.</p>
+        </div>
+        <div class="product-category">
+            <h3 class="dramaturgia-cu-category">Pizzas</h3>
+            <a href="https://seusite.com/pizzas" target="_blank">
+                <img src="https://www.designi.com.br/images/preview/10006042.jpg" alt="Preparando Pizza" class="loaded">
+            </a>
+            <p>Receita: Escolha seus ingredientes favoritos e prepare sua própria pizza na nossa cozinha.</p>
+        </div>
+    </section>
+    <section id="order">
+        <h2 class="dramaturgia-cu-subheader">Faça seu Pedido</h2>
+        <div class="order-form">
+            <label for="order-product">Selecione o Produto:</label>
+            <select id="order-product" name="product">
+                <option value="salgados">Salgados Personalizados</option>
+                <option value="veganos">Salgados Veganos</option>
+                <option value="pizzas">Pizzas</option>
+            </select>
+            <label for="order-quantity">Quantidade:</label>
+            <input type="number" id="order-quantity" name="quantity" value="1" min="1">
+            <label for="order-customer-name">Nome:</label>
+            <input type="text" id="order-customer-name" name="customer-name" required autocomplete="name">
+            <label for="order-customer-email">Email:</label>
+            <input type="email" id="order-customer-email" name="customer-email" required autocomplete="email">
+            <button id="add-to-cart">Adicionar ao Carrinho</button>
+        </div>
+        <div id="cart">
+            <h3>Carrinho</h3>
+            <ul id="cart-items">
+                <!-- Itens adicionados aparecerão aqui -->
+            </ul>
+            <p>Total: <span id="total-price">R$ 0,00</span></p>
+            <button id="place-order">Finalizar Pedido</button>
+        </div>
+    </section>
+    <section id="contact">
+        <h2 class="dramaturgia-cu-subheader">Contato</h2>
+        <form action="https://wa.me/5517996780618" method="get" target="_blank">
+            <label for="contact-name">Nome:</label>
+            <input type="text" id="contact-name" name="contact-name" required autocomplete="name">
+            <label for="contact-email">Email:</label>
+            <input type="email" id="contact-email" name="contact-email" required autocomplete="email">
+            <label for="contact-message">Mensagem:</label>
+            <textarea id="contact-message" name="message" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2024 Explosão de Sabores. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
