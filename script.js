@@ -55,30 +55,13 @@ document.getElementById('place-order').addEventListener('click', () => {
     }
     
     const orderDetails = cart.map(item => `${item.quantity} x ${item.product}`).join(', ');
+    const name = document.getElementById('customer-name').value;
+    const email = document.getElementById('customer-email').value;
 
-    sendEmail(orderDetails); // Chama a função para enviar o email
+    const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
+    const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, '_blank'); // Abre o WhatsApp em nova aba
     cart.length = 0; // Limpa o carrinho
     updateCart(); // Atualiza a visualização do carrinho
 });
-
-// Função para enviar o email com os detalhes do pedido
-function sendEmail(orderDetails) {    const name = document.getElementById('name').value; // Obtém o nome do formulário
-    const email = document.getElementById('email').value; // Obtém o email do formulário
-
-    const templateParams = {
-        name: name,
-        email: email,
-        order: orderDetails
-    };
-
-    emailjs.send('service_owmgfdk', 'template_your_template_id', templateParams)
-        .then((response) => {
-            console.log('Pedido enviado com sucesso!', response.status, response.text);
-            alert('Seu pedido foi enviado com sucesso!'); // Mensagem de sucesso
-        }, (error) => {
-            console.error('Erro ao enviar o pedido:', error);
-            alert('Ocorreu um erro ao enviar seu pedido. Tente novamente mais tarde.'); // Mensagem de erro
-        });
-}
-
-   
