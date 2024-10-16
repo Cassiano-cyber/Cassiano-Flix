@@ -11,6 +11,7 @@ body {
     background-color: #f8f8f8;
     color: #333;
     font-size: 130%;
+    -webkit-text-size-adjust: 100%; /* Adicionado para compatibilidade */
 }
 
 /* HEADER */
@@ -132,4 +133,3 @@ footer {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
-
