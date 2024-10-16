@@ -5,8 +5,8 @@ const totalPriceElement = document.getElementById('total-price');
 
 // Adiciona um evento de clique ao botão "Adicionar ao Carrinho"
 document.getElementById('add-to-cart').addEventListener('click', () => {
-    const productElement = document.getElementById('product');
-    const quantityElement = document.getElementById('quantity');
+    const productElement = document.getElementById('order-product');
+    const quantityElement = document.getElementById('order-quantity');
     
     if (!productElement || !quantityElement) {
         console.error('Elemento não encontrado');
@@ -68,20 +68,8 @@ document.getElementById('place-order').addEventListener('click', () => {
     }
 
     const orderDetails = cart.map(item => `${item.quantity} x ${item.product}`).join(', ');
-    const nameElement = document.getElementById('customer-name');
-    const emailElement = document.getElementById('customer-email');
+    const nameElement = document.getElementById('order-customer-name');
+    const emailElement = document.getElementById('order-customer-email');
 
     if (!nameElement || !emailElement) {
-        console.error('Elemento não encontrado');
-        return;
-    }
-
-    const name = nameElement.value;
-    const email = emailElement.value;
-    const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
-    const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
-
-    window.open(whatsappURL, '_blank'); // Abre o WhatsApp em nova aba
-    cart.length = 0; // Limpa o carrinho
-    updateCart(); // Atualiza a visualização do carrinho
-});
+        console.error('Elemento não[_{{{CITATION{{{_1{](https://github.com/ricardo-cas/pandas/tree/eefd8f3ed9250c15e029b7ae59a24ef9f7ffc4ab/GUIA_MARKDOWN.MD)
