@@ -72,13 +72,26 @@ document.getElementById('place-order').addEventListener('click', () => {
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
     const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
 
-    alert('Seu pedido foi enviado! Você será redirecionado para o WhatsApp.'); // Feedback ao usuário
+    // Exibir a mensagem de feedback
+    const feedbackMessage = document.createElement('div');
+    feedbackMessage.textContent = 'Seu pedido foi enviado! Redirecionando para o WhatsApp...';
+    feedbackMessage.style.position = 'fixed';
+    feedbackMessage.style.top = '20px';
+    feedbackMessage.style.left = '50%';
+    feedbackMessage.style.transform = 'translateX(-50%)';
+    feedbackMessage.style.backgroundColor = '#ff6347';
+    feedbackMessage.style.color = 'white';
+    feedbackMessage.style.padding = '10px 20px';
+    feedbackMessage.style.borderRadius = '5px';
+    feedbackMessage.style.zIndex = '1000';
+    document.body.appendChild(feedbackMessage);
 
-    // Delay antes de redirecionar
+    // Redirecionar automaticamente para o WhatsApp após 1 segundo
     setTimeout(() => {
         window.open(whatsappURL, '_blank'); // Abre o WhatsApp em nova aba
         cart.length = 0; // Limpa o carrinho
         updateCart(); // Atualiza a visualização do carrinho
+        document.body.removeChild(feedbackMessage); // Remove a mensagem de feedback
     }, 1000); // 1000 ms = 1 segundo
 });
 
