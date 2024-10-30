@@ -22,6 +22,10 @@ header {
     padding: 1em 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: -webkit-sticky; /* Para navegadores antigos */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Fica acima de outros elementos */
 }
 
 nav ul {
@@ -39,6 +43,11 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #ffd700; /* Sublinhar o item ativo */
+    color: #ffd700; /* Mudança de cor */
 }
 
 nav ul li a:hover {
