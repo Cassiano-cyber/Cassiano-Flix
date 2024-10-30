@@ -79,7 +79,7 @@ document.getElementById('place-order').addEventListener('click', () => {
         window.open(whatsappURL, '_blank'); // Abre o WhatsApp em nova aba
         cart.length = 0; // Limpa o carrinho
         updateCart(); // Atualiza a visualização do carrinho
-    }, 2000); // 2000 ms = 2 segundos
+    }, 1000); // 1000 ms = 1 segundo
 });
 
 // Realce do item ativo na navbar
