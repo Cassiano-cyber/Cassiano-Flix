@@ -28,30 +28,26 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 
 // Atualiza a visualização do carrinho
 function updateCart() {
-    if (!cartItemsList || !totalPriceElement) {
-        console.error('Elemento não encontrado');
-        return;
-    }
-
     cartItemsList.innerHTML = '';
     let total = 0;
 
-    cart.forEach(item => {
+    cart.forEach((item, index) => {
         const li = document.createElement('li');
-        li.textContent = `${item.quantity}x ${item.product}`;
-
-        // Animação de entrada para o item do carrinho
-        li.style.opacity = 0; // Torna invisível inicialmente
-        li.style.transform = 'translateY(-10px)'; // Inicia deslocado
+        li.textContent = `${item.quantity}x ${item.product} `;
+        
+        // Botão de remover item
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remover';
+        removeButton.addEventListener('click', () => {
+            cart.splice(index, 1); // Remove o item do carrinho
+            updateCart(); // Atualiza o carrinho
+            alert(`${item.product} removido do carrinho.`); // Feedback ao usuário
+        });
+        
+        li.appendChild(removeButton);
         cartItemsList.appendChild(li);
 
-        // Animação
-        setTimeout(() => {
-            li.style.opacity = 1; // Torna visível
-            li.style.transform = 'translateY(0)'; // Retorna ao lugar original
-        }, 10); // Atraso pequeno para ativar a animação
-
-        // Atualize o preço total (valores fictícios)
+        // Atualize o preço total
         if (item.product === 'salgados') total += item.quantity * 10;
         if (item.product === 'veganos') total += item.quantity * 12;
         if (item.product === 'pizzas') total += item.quantity * 20;
@@ -71,17 +67,28 @@ document.getElementById('place-order').addEventListener('click', () => {
     const nameElement = document.getElementById('order-customer-name');
     const emailElement = document.getElementById('order-customer-email');
 
-    if (!nameElement || !emailElement) {
-        console.error('Elemento não encontrado');
-        return;
-    }
-
     const name = nameElement.value;
     const email = emailElement.value;
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
     const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
 
     window.open(whatsappURL, '_blank'); // Abre o WhatsApp em nova aba
+    alert('Seu pedido foi enviado! Você será redirecionado para o WhatsApp.'); // Feedback ao usuário
     cart.length = 0; // Limpa o carrinho
     updateCart(); // Atualiza a visualização do carrinho
+});
+
+// Realce do item ativo na navbar
+const navLinks = document.querySelectorAll('nav ul li a');
+
+window.addEventListener('scroll', () => {
+    let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+    navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            link.classList.add('active');
+        }
+    });
 });
