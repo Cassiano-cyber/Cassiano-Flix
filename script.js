@@ -31,23 +31,13 @@ function updateCart() {
     cartItemsList.innerHTML = '';
     let total = 0;
 
-    cart.forEach((item, index) => {
+    cart.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.quantity}x ${item.product} `;
-        
-        // Botão de remover item
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remover';
-        removeButton.addEventListener('click', () => {
-            cart.splice(index, 1); // Remove o item do carrinho
-            updateCart(); // Atualiza o carrinho
-            alert(`${item.product} removido do carrinho.`); // Feedback ao usuário
-        });
-        
-        li.appendChild(removeButton);
+        li.textContent = `${item.quantity}x ${item.product}`;
+
         cartItemsList.appendChild(li);
 
-        // Atualize o preço total
+        // Atualize o preço total (valores fictícios)
         if (item.product === 'salgados') total += item.quantity * 10;
         if (item.product === 'veganos') total += item.quantity * 12;
         if (item.product === 'pizzas') total += item.quantity * 20;
@@ -72,7 +62,7 @@ document.getElementById('place-order').addEventListener('click', () => {
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
     const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Exibir a mensagem de feedback
+    // Exibir uma mensagem temporária na tela
     const feedbackMessage = document.createElement('div');
     feedbackMessage.textContent = 'Seu pedido foi enviado! Redirecionando para o WhatsApp...';
     feedbackMessage.style.position = 'fixed';
