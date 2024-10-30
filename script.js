@@ -72,10 +72,14 @@ document.getElementById('place-order').addEventListener('click', () => {
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
     const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
 
-    window.open(whatsappURL, '_blank'); // Abre o WhatsApp em nova aba
     alert('Seu pedido foi enviado! Você será redirecionado para o WhatsApp.'); // Feedback ao usuário
-    cart.length = 0; // Limpa o carrinho
-    updateCart(); // Atualiza a visualização do carrinho
+
+    // Delay antes de redirecionar
+    setTimeout(() => {
+        window.open(whatsappURL, '_blank'); // Abre o WhatsApp em nova aba
+        cart.length = 0; // Limpa o carrinho
+        updateCart(); // Atualiza a visualização do carrinho
+    }, 2000); // 2000 ms = 2 segundos
 });
 
 // Realce do item ativo na navbar
