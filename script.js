@@ -7,7 +7,7 @@ const totalPriceElement = document.getElementById('total-price');
 document.getElementById('add-to-cart').addEventListener('click', () => {
     const productElement = document.getElementById('order-product');
     const quantityElement = document.getElementById('order-quantity');
-    
+
     if (!productElement || !quantityElement) {
         console.error('Elemento não encontrado');
         return;
@@ -34,7 +34,6 @@ function updateCart() {
     cart.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.quantity}x ${item.product}`;
-
         cartItemsList.appendChild(li);
 
         // Atualize o preço total (valores fictícios)
@@ -62,9 +61,9 @@ document.getElementById('place-order').addEventListener('click', () => {
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
     const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Exibir uma mensagem temporária na tela
+    // Exibir uma mensagem temporária na tela com detalhes do pedido
     const feedbackMessage = document.createElement('div');
-    feedbackMessage.textContent = 'Seu pedido foi enviado! Redirecionando para o WhatsApp...';
+    feedbackMessage.textContent = `Seu pedido: ${orderDetails}. Redirecionando para o WhatsApp...`;
     feedbackMessage.style.position = 'fixed';
     feedbackMessage.style.top = '20px';
     feedbackMessage.style.left = '50%';
