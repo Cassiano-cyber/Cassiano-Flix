@@ -7,16 +7,20 @@ const totalPriceElement = document.getElementById('total-price');
 document.getElementById('add-to-cart').addEventListener('click', () => {
     const productElement = document.getElementById('order-product');
     const quantityElement = document.getElementById('order-quantity');
+    
     if (!productElement || !quantityElement) {
         console.error('Elemento não encontrado');
         return;
     }
+
     const product = productElement.value;
     const quantity = parseInt(quantityElement.value, 10);
+    
     if (quantity <= 0) {
         alert('Por favor, selecione uma quantidade válida.');
         return;
     }
+
     const item = { product, quantity };
     cart.push(item);
     updateCart();
@@ -26,15 +30,28 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 function updateCart() {
     cartItemsList.innerHTML = '';
     let total = 0;
+
     cart.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.quantity}x ${item.product}`;
         cartItemsList.appendChild(li);
+
         // Atualize o preço total (valores fictícios)
-        if (item.product === 'salgados') total += item.quantity * 10;
-        if (item.product === 'veganos') total += item.quantity * 12;
-        if (item.product === 'pizzas') total += item.quantity * 20;
+        switch (item.product) {
+            case 'salgados':
+                total += item.quantity * 10;
+                break;
+            case 'veganos':
+                total += item.quantity * 12;
+                break;
+            case 'pizzas':
+                total += item.quantity * 20;
+                break;
+            default:
+                console.warn(`Produto desconhecido: ${item.product}`);
+        }
     });
+
     totalPriceElement.textContent = `R$ ${total.toFixed(2)}`;
 }
 
@@ -44,9 +61,11 @@ document.getElementById('place-order').addEventListener('click', () => {
         alert('Seu carrinho está vazio!');
         return;
     }
+
     const orderDetails = cart.map(item => `${item.quantity} x ${item.product}`).join(', ');
     const nameElement = document.getElementById('order-customer-name');
     const emailElement = document.getElementById('order-customer-email');
+    
     const name = nameElement.value;
     const email = emailElement.value;
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
@@ -55,15 +74,17 @@ document.getElementById('place-order').addEventListener('click', () => {
     // Exibir uma mensagem temporária na tela com detalhes do pedido
     const feedbackMessage = document.createElement('div');
     feedbackMessage.textContent = `Seu pedido: ${orderDetails}. Redirecionando para o WhatsApp...`;
-    feedbackMessage.style.position = 'fixed';
-    feedbackMessage.style.top = '20px';
-    feedbackMessage.style.left = '50%';
-    feedbackMessage.style.transform = 'translateX(-50%)';
-    feedbackMessage.style.backgroundColor = '#ff6347';
-    feedbackMessage.style.color = 'white';
-    feedbackMessage.style.padding = '10px 20px';
-    feedbackMessage.style.borderRadius = '5px';
-    feedbackMessage.style.zIndex = '1000';
+    Object.assign(feedbackMessage.style, {
+        position: 'fixed',
+        top: '20px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        backgroundColor: '#ff6347',
+        color: 'white',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        zIndex: '1000'
+    });
     document.body.appendChild(feedbackMessage);
 
     // Redirecionar automaticamente para o WhatsApp após 1 segundo
@@ -78,9 +99,11 @@ document.getElementById('place-order').addEventListener('click', () => {
 // Realce do item ativo na navbar
 const navLinks = document.querySelectorAll('nav ul li a');
 window.addEventListener('scroll', () => {
-    let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
     navLinks.forEach(link => {
         const section = document.querySelector(link.getAttribute('href'));
+        
         if (section && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
             navLinks.forEach(link => link.classList.remove('active'));
             link.classList.add('active');
