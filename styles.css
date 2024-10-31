@@ -22,7 +22,6 @@ header {
     padding: 1em 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: -webkit-sticky; /* Para navegadores antigos */
     position: sticky;
     top: 0;
     z-index: 1000; /* Fica acima de outros elementos */
@@ -32,6 +31,7 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
+    padding: 0; /* Remover padding padrão */
 }
 
 nav ul li {
@@ -68,7 +68,10 @@ section {
     background-color: #f0f8ff;
 }
 
-.order-form label, .order-form select, .order-form input, .order-form button {
+.order-form label,
+.order-form select,
+.order-form input,
+.order-form button {
     display: block;
     margin: 10px auto;
     font-size: 1em;
@@ -79,7 +82,8 @@ section {
     width: 150px;
 }
 
-#add-to-cart, #place-order {
+#add-to-cart,
+#place-order {
     background-color: #ff6347;
     color: white;
     border: none;
@@ -89,4 +93,21 @@ section {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-#add-to-cart:hover[_{{{CITATION{{{_1{](https://github.com/ricardo-cas/pandas/tree/eefd8f3ed9250c15e029b7ae59a24ef9f7ffc4ab/GUIA_MARKDOWN.MD)
+#add-to-cart:hover,
+#place-order:hover {
+    background-color: #ff4500; /* Cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Muda para coluna em telas pequenas */
+    }
+
+    .order-form input,
+    #add-to-cart,
+    #place-order {
+        width: 100%; /* Largura total em telas pequenas */
+    }
+}
