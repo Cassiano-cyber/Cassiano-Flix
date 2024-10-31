@@ -7,20 +7,16 @@ const totalPriceElement = document.getElementById('total-price');
 document.getElementById('add-to-cart').addEventListener('click', () => {
     const productElement = document.getElementById('order-product');
     const quantityElement = document.getElementById('order-quantity');
-    
     if (!productElement || !quantityElement) {
         console.error('Elemento não encontrado');
         return;
     }
-
     const product = productElement.value;
     const quantity = parseInt(quantityElement.value, 10);
-    
     if (quantity <= 0) {
         alert('Por favor, selecione uma quantidade válida.');
         return;
     }
-
     const item = { product, quantity };
     cart.push(item);
     updateCart();
@@ -30,12 +26,10 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 function updateCart() {
     cartItemsList.innerHTML = '';
     let total = 0;
-
     cart.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.quantity}x ${item.product}`;
         cartItemsList.appendChild(li);
-
         // Atualize o preço total (valores fictícios)
         switch (item.product) {
             case 'salgados':
@@ -51,7 +45,6 @@ function updateCart() {
                 console.warn(`Produto desconhecido: ${item.product}`);
         }
     });
-
     totalPriceElement.textContent = `R$ ${total.toFixed(2)}`;
 }
 
@@ -61,11 +54,9 @@ document.getElementById('place-order').addEventListener('click', () => {
         alert('Seu carrinho está vazio!');
         return;
     }
-
     const orderDetails = cart.map(item => `${item.quantity} x ${item.product}`).join(', ');
     const nameElement = document.getElementById('order-customer-name');
     const emailElement = document.getElementById('order-customer-email');
-    
     const name = nameElement.value;
     const email = emailElement.value;
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
@@ -100,10 +91,8 @@ document.getElementById('place-order').addEventListener('click', () => {
 const navLinks = document.querySelectorAll('nav ul li a');
 window.addEventListener('scroll', () => {
     const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-
     navLinks.forEach(link => {
         const section = document.querySelector(link.getAttribute('href'));
-        
         if (section && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
             navLinks.forEach(link => link.classList.remove('active'));
             link.classList.add('active');
