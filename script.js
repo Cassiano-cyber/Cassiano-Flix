@@ -7,16 +7,20 @@ const totalPriceElement = document.getElementById('total-price');
 document.getElementById('add-to-cart').addEventListener('click', () => {
     const productElement = document.getElementById('order-product');
     const quantityElement = document.getElementById('order-quantity');
+    
     if (!productElement || !quantityElement) {
         console.error('Elemento não encontrado');
         return;
     }
+
     const product = productElement.value;
     const quantity = parseInt(quantityElement.value, 10);
+    
     if (quantity <= 0) {
         alert('Por favor, selecione uma quantidade válida.');
         return;
     }
+
     const item = { product, quantity };
     cart.push(item);
     updateCart();
@@ -26,11 +30,24 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 function updateCart() {
     cartItemsList.innerHTML = '';
     let total = 0;
-    cart.forEach(item => {
+
+    cart.forEach((item, index) => {
         const li = document.createElement('li');
         li.textContent = `${item.quantity}x ${item.product}`;
+        
+        // Botão de remover item
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = '🗑️'; // Ícone de lixeira
+        deleteButton.setAttribute('aria-label', `Remover ${item.product} do carrinho`);
+        deleteButton.addEventListener('click', () => {
+            cart.splice(index, 1); // Remove o item do carrinho
+            updateCart(); // Atualiza a visualização do carrinho
+        });
+
+        li.appendChild(deleteButton);
         cartItemsList.appendChild(li);
-        // Atualize o preço total (valores fictícios)
+
+        // Atualize o preço total
         switch (item.product) {
             case 'salgados':
                 total += item.quantity * 10;
@@ -45,6 +62,7 @@ function updateCart() {
                 console.warn(`Produto desconhecido: ${item.product}`);
         }
     });
+
     totalPriceElement.textContent = `R$ ${total.toFixed(2)}`;
 }
 
@@ -54,6 +72,7 @@ document.getElementById('place-order').addEventListener('click', () => {
         alert('Seu carrinho está vazio!');
         return;
     }
+
     const orderDetails = cart.map(item => `${item.quantity} x ${item.product}`).join(', ');
     const nameElement = document.getElementById('order-customer-name');
     const emailElement = document.getElementById('order-customer-email');
@@ -71,6 +90,7 @@ document.getElementById('place-order').addEventListener('click', () => {
     // Exibir uma mensagem temporária na tela com detalhes do pedido
     const feedbackMessage = document.createElement('div');
     feedbackMessage.textContent = `Seu pedido: ${orderDetails}. Redirecionando para o WhatsApp...`;
+    feedbackMessage.setAttribute('role', 'alert'); // Acessibilidade
     Object.assign(feedbackMessage.style, {
         position: 'fixed',
         top: '20px',
@@ -83,6 +103,7 @@ document.getElementById('place-order').addEventListener('click', () => {
         zIndex: '1000',
         opacity: '0'
     });
+
     document.body.appendChild(feedbackMessage);
     setTimeout(() => {
         feedbackMessage.style.transition = 'opacity 0.5s';
