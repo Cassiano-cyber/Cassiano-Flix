@@ -1,1 +1,16 @@
 
+{
+  "name": "Explosão de Sabores",
+  "short_name": "Sabores",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff6347",
+  "icons": [
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}
