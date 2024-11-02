@@ -1,0 +1,9 @@
+<IfModule mod_headers.c>
+    # Cache por 1 semana
+    <FilesMatch "\.(html|css|js|png|jpg|jpeg|gif|ico)$">
+        Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+</IfModule>
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
