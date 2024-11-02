@@ -59,6 +59,12 @@ document.getElementById('place-order').addEventListener('click', () => {
     const emailElement = document.getElementById('order-customer-email');
     const name = nameElement.value;
     const email = emailElement.value;
+
+    if (!name || !email) {
+        alert('Por favor, preencha seu nome e e-mail.');
+        return;
+    }
+
     const whatsappMessage = `Olá, meu nome é ${name}. Meu e-mail é ${email}. Estou fazendo um pedido: ${orderDetails}.`;
     const whatsappURL = `https://wa.me/5517996780618?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -74,28 +80,23 @@ document.getElementById('place-order').addEventListener('click', () => {
         color: 'white',
         padding: '10px 20px',
         borderRadius: '5px',
-        zIndex: '1000'
+        zIndex: '1000',
+        opacity: '0'
     });
     document.body.appendChild(feedbackMessage);
-
-    // Redirecionar automaticamente para o WhatsApp após 1 segundo
     setTimeout(() => {
-        window.open(whatsappURL, '_blank'); // Abre o WhatsApp em nova aba
-        cart.length = 0; // Limpa o carrinho
-        updateCart(); // Atualiza a visualização do carrinho
-        document.body.removeChild(feedbackMessage); // Remove a mensagem de feedback
-    }, 1000); // 1000 ms = 1 segundo
-});
+        feedbackMessage.style.transition = 'opacity 0.5s';
+        feedbackMessage.style.opacity = '1'; // Aparece suavemente
+    }, 0);
 
-// Realce do item ativo na navbar
-const navLinks = document.querySelectorAll('nav ul li a');
-window.addEventListener('scroll', () => {
-    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-    navLinks.forEach(link => {
-        const section = document.querySelector(link.getAttribute('href'));
-        if (section && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            link.classList.add('active');
-        }
-    });
+    setTimeout(() => {
+        feedbackMessage.remove(); // Remover após alguns segundos
+    }, 3000); // 3 segundos
+
+    // Limpa o carrinho após o pedido
+    cart.length = 0; // Limpa o carrinho
+    updateCart(); // Atualiza a visualização do carrinho
+
+    // Redireciona para o WhatsApp
+    window.open(whatsappURL, '_blank').focus();
 });
