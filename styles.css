@@ -1,3 +1,4 @@
+
 /* Importa as fontes */
 @import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
 
@@ -126,6 +127,19 @@ section {
 #total-price {
     font-weight: bold;
     color: #ff6347;
+}
+/* Botão de remover item */
+#cart-items button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px; /* Espaçamento entre o texto e o botão */
+    color: #ff6347; /* Cor da lixeira */
+    font-size: 1.2em; /* Tamanho do ícone */
+}
+
+#cart-items button:hover {
+    color: #ff4500; /* Cor ao passar o mouse */
 }
 
 /* FOOTER */
