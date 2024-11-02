@@ -1,9 +1,30 @@
+# Habilitar a reescrita de URLs
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>
+
+# Configurações de Cache
 <IfModule mod_headers.c>
     # Cache por 1 semana
     <FilesMatch "\.(html|css|js|png|jpg|jpeg|gif|ico)$">
         Header set Cache-Control "max-age=604800, public"
     </FilesMatch>
 </IfModule>
+
+# Segurança
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Redirecionar HTTP para HTTPS
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
