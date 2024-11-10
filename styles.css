@@ -1,4 +1,3 @@
-
 /* Importa as fontes */
 @import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
 
@@ -68,78 +67,42 @@ section {
     max-width: 100%; /* Garante que a seção não exceda a largura da tela */
 }
 
-#order {
-    background-color: #f0f8ff;
+#home img,
+#products img,
+#offers img {
+    width: 80%;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.order-form label,
-.order-form select,
-.order-form input,
-.order-form button {
-    display: block;
-    margin: 10px auto;
-    font-size: 1em;
-    max-width: 100%; /* Garante que os elementos não excedam a largura da tela */
+.loaded {
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-.order-form input {
-    padding: 0.5em;
-    width: 150px;
+/* Estilos de Produtos */
+.product-category {
+    margin-bottom: 2em;
 }
 
-#add-to-cart,
-#place-order {
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-#add-to-cart:hover,
-#place-order:hover {
-    background-color: #ff4500; /* Cor do botão ao passar o mouse */
-    transform: scale(1.05); /* Efeito de aumento */
-}
-
-/* CARRINHO */
-#cart {
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: white;
+.product-category img {
+    width: 100%;
+    max-width: 350px;
     border-radius: 8px;
-    max-width: 100%; /* Garante que o carrinho não exceda a largura da tela */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#cart-items {
-    list-style-type: none;
-    padding: 0;
+.product-category p {
+    font-size: 1.1rem;
+    color: #555;
 }
 
-#cart-items li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-#total-price {
-    font-weight: bold;
-    color: #ff6347;
-}
-/* Botão de remover item */
-#cart-items button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px; /* Espaçamento entre o texto e o botão */
-    color: #ff6347; /* Cor da lixeira */
-    font-size: 1.2em; /* Tamanho do ícone */
-}
-
-#cart-items button:hover {
-    color: #ff4500; /* Cor ao passar o mouse */
+.product-category a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin-top: 10px;
 }
 
 /* FOOTER */
@@ -157,28 +120,71 @@ footer {
     to { opacity: 1; }
 }
 
-#home img,
-#products img,
-#offers img {
-    width: 80%;
-    border-radius: 10px;
-    animation: fadeIn 1.5s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.loaded {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
 /* Estilos Responsivos */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column; /* Muda para coluna em telas pequenas */
     }
-    .order-form input,
-    #add-to-cart,
-    #place-order {
-        width: 100%; /* Largura total em telas pequenas */
+
+    .product-category {
+        margin: 1em 0; /* Ajusta espaçamento entre categorias */
     }
+
+    #home img,
+    #products img {
+        width: 90%; /* Ajuste nas imagens */
+    }
+}
+
+/* Melhorias no formulário de contato */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff6347;
+}
+
+.contact-form button {
+    background-color: #ff6347;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
 }
