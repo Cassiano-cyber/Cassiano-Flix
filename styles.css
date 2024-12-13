@@ -1,44 +1,97 @@
+/* Importa as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
+
+/* Normalização de CSS */
+@import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
+
 body {
-    font-family: 'Dramaturgia Cuba', sans-serif;
+    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: #f8f8f8;
     color: #333;
+    font-size: 130%;
+    -webkit-text-size-adjust: 100%; /* Adicionado para compatibilidade */
+    text-size-adjust: 100%; /* Adicionado para compatibilidade */
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
+/* HEADER */
 header {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 20px;
+    background-color: #ff6347;
+    color: white;
+    padding: 1em 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Fica acima de outros elementos */
+    width: 100%;
 }
 
 nav ul {
+    display: flex;
+    justify-content: center;
     list-style-type: none;
-    padding: 0;
+    padding: 0; /* Remover padding padrão */
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 1em;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
+nav ul li a.active {
+    border-bottom: 2px solid #ffd700; /* Sublinhar o item ativo */
+    color: #ffd700; /* Mudança de cor */
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* SECTIONS */
 section {
-    padding: 20px;
+    padding: 2em;
+    text-align: center;
+    background-color: #f8f8f8;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Garante que a seção não exceda a largura da tela */
 }
 
+#home img,
+#products img,
+#offers img {
+    width: 90%;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease; /* Transição suave */
+}
+
+.loaded {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilos de Produtos */
 .product-category {
-    margin-bottom: 20px;
+    margin-bottom: 2em;
 }
 
 .product-category img {
     width: 100%;
-    height: auto;
+    max-width: 600px; /* Limita o tamanho das imagens grandes */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease; /* Adiciona a transição */
 }
 
@@ -46,44 +99,104 @@ section {
     transform: scale(1.1); /* Adiciona o efeito de "saltar" */
 }
 
+.product-category p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.product-category a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Muda para coluna em telas pequenas */
+    }
+
+    .product-category {
+        margin: 1em 0; /* Ajusta espaçamento entre categorias */
+    }
+
+    #home img,
+    #products img {
+        width: 80%; /* Ajusta o tamanho das imagens em telas pequenas */
+        max-width: 350px; /* Limita o tamanho máximo */
+    }
+
+    .product-category img {
+        width: 80%; /* Ajuste a largura das imagens nos produtos */
+        max-width: 350px;
+    }
+}
+
+/* Melhorias no formulário de contato */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form-group {
+.contact-form .form-group {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.contact-form label {
+    font-size: 1.1rem;
+    font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
 
-.form-group input,
-.form-group textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
 }
 
-.contact-button {
-    background-color: #ff0000;
-    color: #fff;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff6347;
+}
+
+.contact-form button {
+    background-color: #ff6347;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
     border: none;
-    padding: 10px 20px;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.contact-button:hover {
-    background-color: #cc0000;
-}
-
-footer {
-    background-color: #ff0000;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+.contact-form button:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
 }
