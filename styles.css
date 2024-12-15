@@ -1,139 +1,209 @@
-/* Normalização de CSS */
-@import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
-
-/* Importa as fontes */
+/* Importações de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
 
+/* Estilos Gerais */
 body {
-    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
+    font-family: 'Dramaturgia Cuba', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
-    font-size: 130%;
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    overflow-x: hidden;
+    background-color: #f4f4f4;
 }
 
-/* HEADER */
 header {
-    background-color: #ff6347;
+    background-color: #333;
     color: white;
-    padding: 1em 0;
+    padding: 1em;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
 }
 
-/* Navegação */
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+header nav ul {
+    list-style: none;
     padding: 0;
 }
 
-nav ul li {
-    margin: 0 1em;
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-nav ul li a {
+header nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
 }
 
-nav ul li a.active,
-nav ul li a:hover {
-    color: #ffd700;
-    border-bottom: 2px solid #ffd700;
-}
-
-/* Seções */
-section {
-    padding: 2em;
+/* Home Section */
+#home {
     text-align: center;
+    padding: 3em;
     background-color: #fff;
-    margin-bottom: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-    font-size: 150%;
-}
-
-/* Estilo das avaliações */
-#avaliacoes {
-    background-color: #fafafa;
-    padding: 2em;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#avaliacoes-lista {
-    margin-bottom: 2em;
+.dramaturgia-cu-header {
+    font-family: 'Dramaturgia Cuba', sans-serif;
+    font-size: 3em;
 }
 
-.avaliacao {
+.dramaturgia-cu-subheader {
+    font-size: 2em;
+    margin-top: 0.5em;
+}
+
+#home img {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Produtos Section */
+#products {
+    padding: 3em;
     background-color: #fff;
-    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+}
+
+.product-category {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.product-category img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-category h3 {
+    font-family: 'Dramaturgia Cuba', sans-serif;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+/* Contato Section */
+#contact {
+    background-color: #fff;
+    padding: 3em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dramaturgia-cu-subheader {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form .form-group {
     margin-bottom: 1em;
 }
 
-.avaliacao strong {
-    display: block;
-    font-size: 1.2em;
-    color: #333;
+.contact-form label {
+    font-weight: bold;
 }
 
-.avaliacao p {
-    color: #555;
-    font-size: 1.1em;
-}
-
-/* Formulário de avaliação */
-#avaliacao-form input,
-#avaliacao-form textarea {
+.contact-form input, .contact-form textarea {
     width: 100%;
-    padding: 1em;
-    margin: 0.5em 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-button {
+    background-color: #ff6347;
+    color: white;
+    padding: 1em 2em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+.contact-button:hover {
+    background-color: #e5533e;
+}
+
+/* Avaliações Section */
+#avaliacoes {
+    padding: 3em;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#avaliacoes h2 {
+    text-align: center;
+}
+
+#avaliacoes-lista {
+    margin-top: 2em;
+}
+
+.avaliacao {
+    padding: 10px;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#avaliacao-form input, #avaliacao-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 #avaliacao-form button {
     background-color: #ff6347;
     color: white;
-    padding: 0.8em 2em;
+    padding: 10px;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.1em;
+    width: 100%;
+    border-radius: 5px;
 }
 
 #avaliacao-form button:hover {
-    background-color: #e55347;
+    background-color: #e5533e;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    margin-top: 3em;
+}
+
+footer p {
+    margin: 0;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    .product-category img {
+        max-width: 80%;
     }
 
-    .product-category {
-        display: block;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
+    .contact-button {
+        width: auto;
     }
 }
