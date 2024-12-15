@@ -89,18 +89,18 @@ section {
 
 /* Cores diferentes para cada categoria */
 .product-category.salgados {
-    background-color: #ffe4b2; /* Laranja suave */
-    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.5); /* Brilho laranja */
+    background-color: #ffe5b4; /* Laranja suave */
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); /* Brilho laranja */
 }
 
 .product-category.salgados-veganos {
-    background-color: #d4fce7; /* Verde suave */
-    box-shadow: 0 4px 8px rgba(18, 255, 167, 0.5); /* Brilho verde */
+    background-color: #d4f5e8; /* Verde suave */
+    box-shadow: 0 4px 8px rgba(18, 255, 167, 0.6); /* Brilho verde */
 }
 
 .product-category.pizzas {
-    background-color: #ffccd5; /* Vermelho suave */
-    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.5); /* Brilho vermelho */
+    background-color: #ffcdd2; /* Vermelho suave */
+    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6); /* Brilho vermelho */
 }
 
 /* Estilos para as imagens das categorias de produtos */
