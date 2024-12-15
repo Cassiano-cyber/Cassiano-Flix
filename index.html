@@ -3,41 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibilidade com IE -->
     <title>Explosão Crocante</title>
     <meta name="description" content="Descubra nossos salgados personalizados, salgados veganos e pizzas deliciosas na Explosão Crocante.">
     <meta name="keywords" content="salgados, veganos, pizzas, Cassiano Flix">
     <meta name="author" content="Cassiano Flix">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Segurança e Cache -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
-    <meta http-equiv="Expires" content="0">
-    
-    <!-- Firebase SDK -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-        import { getFirestore, collection, query, orderBy, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-        
-        // Configurações do Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyCgFRQYluZdsWMizR1ESBn_X9Aq_IIIOZk",
-            authDomain: "sistema-de-comentarios-972e6.firebaseapp.com",
-            projectId: "sistema-de-comentarios-972e6",
-            storageBucket: "sistema-de-comentarios-972e6.firebasestorage.app",
-            messagingSenderId: "872216046988",
-            appId: "1:872216046988:web:00f25480ca246b439bfaa9"
-        };
-
-        // Inicializar Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // Expor db para uso global
-        window.db = db;
-    </script>
 </head>
 <body>
     <header>
@@ -113,6 +84,20 @@
         <p>© 2024 Explosão Crocante. Todos os direitos reservados.</p>
     </footer>
 
-    <script type="module" src="script.js"></script>
+    <!-- Scripts -->
+    <script>
+      if ('noModule' in HTMLScriptElement.prototype) {
+        // Carregar módulo para navegadores modernos
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = 'script.js';
+        document.head.appendChild(script);
+      } else {
+        // Carregar script tradicional para navegadores antigos
+        const script = document.createElement('script');
+        script.src = 'script-legacy.js'; // Substitua pelo arquivo JS não modularizado
+        document.head.appendChild(script);
+      }
+    </script>
 </body>
 </html>
