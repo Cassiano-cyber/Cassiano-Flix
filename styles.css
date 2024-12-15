@@ -201,3 +201,39 @@ footer {
     background-color: #ff4500;
     transform: scale(1.05);
 }
+#avaliacoes {
+  margin-top: 20px;
+}
+
+.avaliacao {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+#avaliacao-form {
+  margin-top: 20px;
+}
+
+#avaliacao-form input,
+#avaliacao-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#avaliacao-form button {
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#avaliacao-form button:hover {
+  background-color: #ff4500;
+}
+
