@@ -1,118 +1,28 @@
 /* Importa as fontes */
 @import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css'); /* Normaliza o CSS */
 
-/* Corpo do site */
+/* Normalização de CSS */
+@import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
+
+/* Estilos Globais */
 body {
-    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive; /* Definindo a fonte do site */
-    margin: 0; 
+    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
+    margin: 0;
     padding: 0;
-    background-color: #f8f8f8; /* Cor suave de fundo para o corpo */
+    background-color: rgb(244, 244, 244);
     font-size: 130%;
-    color: #333; /* Cor de texto principal */
+    color: #333;
 }
 
-/* Header */
 header {
-    background-color: #ff6347; /* Cor de fundo suave para o cabeçalho */
+    background-color: #ff6347;
     color: white;
     padding: 1em 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave no cabeçalho */
-    font-size: 130%;
-}
-
-/* Navegação */
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-    font-size: 130%;
-}
-
-nav ul li a:hover, nav ul li a:focus {
-    color: #ffd700; /* Cor de destaque ao passar o mouse */
-    outline: 2px solid #ffd700;
-}
-
-/* Seções */
-section {
-    padding: 2em;
-    text-align: center;
-    background-color: #f8f8f8; /* Cor suave de fundo para seções */
-    margin-bottom: 2em;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 130%;
 }
 
-/* Seção Home */
-section#home {
-    background-color: #ffefd5; /* Cor suave de fundo para a seção Home */
-}
-
-/* Seção Products */
-section#products {
-    background-color: #fffacd; /* Cor suave de fundo para a seção Products */
-}
-
-/* Seção Menu */
-section#menu {
-    background-color: #e0ffff; /* Cor suave de fundo para a seção Menu */
-}
-
-/* Categorias de Produtos */
-.product-category {
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Imagens das Categorias */
-.product-category img, section#home img {
-    display: block;
-    margin: 0 auto 20px;
-    width: 80vw;
-    max-width: 800px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-category img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Títulos das Categorias */
-.product-category h3 {
-    color: #ff6347; /* Cor de destaque para os títulos das categorias */
-    margin-top: 0.5em;
-    font-size: 137%;
-}
-
-/* Parágrafos dentro das Categorias */
-.product-category p {
-    color: #333;
-    font-size: 1.64em;
-    font-weight: bold;
-}
-
-/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -124,59 +34,84 @@ footer {
     font-size: 130%;
 }
 
-/* Formulários */
-form {
-    margin-top: 2em;
+/* Seção Principal */
+section {
+    display: block;
+    unicode-bidi: isolate;
+    padding: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 130%;
 }
 
-/* Labels de Formulário */
-form label {
-    display: block;
-    margin-bottom: 0.5em;
+/* Seção de Produtos */
+#products {
+    background-color: #f8f8f8; /* Cor suave de fundo para a seção de produtos */
+}
+
+/* Categorias de Produtos com cores diferentes */
+.product-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cores diferentes para cada categoria */
+.product-category.pizzas {
+    background-color: #ffebcd; /* Cor suave para Pizzas */
+}
+
+.product-category.burgers {
+    background-color: #f0e68c; /* Cor suave para Hamburgueres */
+}
+
+.product-category.pastas {
+    background-color: #e0ffff; /* Cor suave para Massas */
+}
+
+.product-category.salads {
+    background-color: #fffacd; /* Cor suave para Saladas */
+}
+
+/* Estilos para as imagens das categorias de produtos */
+.product-category img {
+    width: 80vw; /* Largura ajustada da imagem */
+    max-width: 400px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos das Categorias */
+.product-category h3 {
+    color: #ff6347; /* Cor de destaque para o título */
+    margin-top: 0.5em;
+    font-size: 1.6em;
+}
+
+/* Descrição dos produtos */
+.product-category p {
+    color: #333;
+    font-size: 1.2em;
     font-weight: bold;
+    text-align: center;
 }
 
-/* Inputs e Textareas */
-form input, form textarea {
-    padding: 0.5em;
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Ajustes de layout para visualização em dispositivos móveis */
+@media (max-width: 768px) {
+    .product-category img {
+        width: 90vw;
+    }
 }
 
-/* Foco em Inputs */
-form input:focus, form textarea:focus {
-    border-color: #ff6347; /* Cor de destaque ao focar no input */
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
-}
-
-/* Botões de Formulário */
-form button {
-    padding: 0.5em 1em;
-    background-color: #ff6347; /* Cor de fundo do botão */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-/* Hover nos Botões */
-form button:hover {
-    background-color: #ffd700; /* Cor de destaque ao passar o mouse */
-    transform: scale(1.05);
-}
-
-/* Foco no Botão */
-form button:focus {
-    outline: 2px solid #ffd700; /* Cor de foco */
-}
-
-/* Lazy Loading para Imagens */
+/* Lazy Loading para imagens */
 img[loading="lazy"] {
     opacity: 0;
     transition: opacity 0.3s;
@@ -186,143 +121,34 @@ img[loading="lazy"].loaded {
     opacity: 1;
 }
 
-/* Estilos para Títulos */
-h1, h2, h3 {
-    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
-    font-weight: 400;
-}
-
-/* Estilos para Parágrafos */
-p {
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
-/* Configurações globais de Margem e Padding */
-body, header, nav ul, nav ul li, nav ul li a, section, .product-category, footer, form, form label, form input, form button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Foco visível para Botões e Links */
+/* Foco visível para botões e links */
 button:focus, a:focus {
     outline: 2px solid #ffd700;
 }
 
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-    body {
-        font-size: 110%; /* Ajuste de fonte para telas menores */
-    }
-
-    header {
-        font-size: 110%; /* Ajuste de fonte para telas menores */
-    }
-
-    nav ul li {
-        display: block;
-        margin: 0.5em 0;
-    }
-
-    section {
-        font-size: 110%; /* Ajuste de fonte para telas menores */
-    }
-
-    .product-category img, section#home img {
-        width: 90vw; /* Ajuste de imagem para telas menores */
-    }
-
-    footer {
-        font-size: 110%; /* Ajuste de fonte para telas menores */
-    }
-}
-
-/* Animação de Fade-in para seções */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-section {
-    animation: fadeIn 1s ease-in-out; /* Animação de fade-in para as seções */
-}
-
-/* Layout Flexbox para Categorias de Produtos */
+/* Flexbox para layout responsivo */
 .product-category {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Grid Layout para Produtos */
-.product-category {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-@media (min-width: 768px) {
-    .product-category {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .product-category {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Estilos adicionais */
-.hidden {
-    display: none;
-}
-
-.product-category ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.product-category ul li {
-    background-color: #ffefd5; /* Cor suave para itens da lista */
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Ajuste do tamanho do Banner */
-section#home img {
-    width: 80vw; /* 80% da largura da viewport */
-    max-width: 1200px;
+/* SEO e Acessibilidade */
+img {
+    max-width: 100%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Fonte Dramaturgia Cuba para Cabeçalhos */
-.dramaturgia-cu-header {
-    font-family: "Dramaturgia Cuba", "Dancing Script", cursive;
-    font-optical-sizing: auto;
+h1, h2, h3 {
+    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
     font-weight: 400;
-    font-style: normal;
-    font-size: 2em;
 }
 
-.dramaturgia-cu-subheader {
-    font-family: "Dramaturgia Cuba", "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1.5em;
-}
-
-.dramaturgia-cu-category {
-    font-family: "Dramaturgia Cuba", "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1.2em;
+/* Minificação de CSS */
+body, header, nav ul, nav ul li, nav ul li a, section, .product-category, footer, form, form label, form input, form button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
