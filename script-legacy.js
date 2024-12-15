@@ -1,4 +1,4 @@
-// Carregar o SDK do Firebase de maneira tradicional (sem usar módulos)
+// Carregar o SDK do Firebase de maneira tradicional (sem módulos)
 var firebaseConfig = {
   apiKey: "AIzaSyCgFRQYluZdsWMizR1ESBn_X9Aq_IIIOZk",
   authDomain: "sistema-de-comentarios-972e6.firebaseapp.com",
