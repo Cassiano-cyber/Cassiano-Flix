@@ -1,8 +1,8 @@
-/* Importa as fontes */
-@import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
-
 /* Normalização de CSS */
 @import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
+
+/* Importa as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
 
 body {
     font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
@@ -11,8 +11,8 @@ body {
     background-color: #f8f8f8;
     color: #333;
     font-size: 130%;
-    -webkit-text-size-adjust: 100%; /* Adicionado para compatibilidade */
-    text-size-adjust: 100%; /* Adicionado para compatibilidade */
+    -webkit-text-size-adjust: 100%; /* Compatibilidade */
+    text-size-adjust: 100%; /* Compatibilidade */
     overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
@@ -23,17 +23,20 @@ header {
     padding: 1em 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: -webkit-sticky; /* Compatibilidade com Safari */
     position: sticky;
     top: 0;
     z-index: 1000; /* Fica acima de outros elementos */
     width: 100%;
 }
 
+/* Flexbox compatível com IE */
 nav ul {
+    display: -webkit-flex; /* Compatibilidade com o Safari */
     display: flex;
     justify-content: center;
     list-style-type: none;
-    padding: 0; /* Remover padding padrão */
+    padding: 0;
 }
 
 nav ul li {
@@ -48,8 +51,8 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    border-bottom: 2px solid #ffd700; /* Sublinhar o item ativo */
-    color: #ffd700; /* Mudança de cor */
+    border-bottom: 2px solid #ffd700;
+    color: #ffd700;
 }
 
 nav ul li a:hover {
@@ -64,10 +67,11 @@ section {
     margin-bottom: 2em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Garante que a seção não exceda a largura da tela */
-    font-size: 150%; /* tamanho das letras */
+    max-width: 100%;
+    font-size: 150%;
 }
 
+/* Estilos para imagens */
 #home img,
 #products img,
 #offers img {
@@ -75,7 +79,7 @@ section {
     border-radius: 10px;
     animation: fadeIn 1.5s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease; /* Transição suave */
+    transition: width 0.3s ease;
 }
 
 .loaded {
@@ -83,73 +87,29 @@ section {
     transition: opacity 0.3s ease;
 }
 
-/* Estilos de Produtos */
-.product-category {
-    margin-bottom: 2em;
-}
-
-.product-category img {
-    width: 100%;
-    max-width: 600px; /* Limita o tamanho das imagens grandes */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; /* Adiciona a transição */
-}
-
-.product-category img:hover {
-    transform: scale(1.1); /* Adiciona o efeito de "saltar" */
-}
-
-.product-category p {
-    font-size: 1.8rem;
-    color: #555;
-}
-
-.product-category a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    margin-top: 10px;
-}
-
-/* FOOTER */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1em;
-    text-align: center;
-    width: 100%;
-}
-
-/* ANIMAÇÕES */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Estilos Responsivos */
+/* Responsividade */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Muda para coluna em telas pequenas */
+        flex-direction: column;
     }
 
     .product-category {
-        margin: 1em 0; /* Ajusta espaçamento entre categorias */
+        margin: 1em 0;
     }
 
     #home img,
     #products img {
-        width: 80%; /* Ajusta o tamanho das imagens em telas pequenas */
-        max-width: 350px; /* Limita o tamanho máximo */
+        width: 80%;
+        max-width: 350px;
     }
 
     .product-category img {
-        width: 80%; /* Ajuste a largura das imagens nos produtos */
+        width: 80%;
         max-width: 350px;
     }
 }
 
-/* Melhorias no formulário de contato */
+/* Estilos de formulário e animação */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -158,82 +118,3 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.contact-form .form-group {
-    margin-bottom: 15px;
-}
-
-.contact-form label {
-    font-size: 1.1rem;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #ff6347;
-}
-
-.contact-form button {
-    background-color: #ff6347;
-    color: white;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #ff4500;
-    transform: scale(1.05);
-}
-#avaliacoes {
-  margin-top: 20px;
-}
-
-.avaliacao {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-}
-
-#avaliacao-form {
-  margin-top: 20px;
-}
-
-#avaliacao-form input,
-#avaliacao-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-#avaliacao-form button {
-  padding: 10px 20px;
-  background-color: #ff6347;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#avaliacao-form button:hover {
-  background-color: #ff4500;
-}
-
