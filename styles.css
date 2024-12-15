@@ -23,6 +23,31 @@ header {
     font-size: 130%;
 }
 
+nav {
+    text-align: center;
+    margin: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffd700; /* Amarelo */
+    font-size: 1.5em;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; /* Efeito de brilho */
+}
+
 footer {
     background-color: #333;
     color: white;
@@ -63,20 +88,16 @@ section {
 }
 
 /* Cores diferentes para cada categoria */
+.product-category.salgados {
+    background-color: #ffb100; /* Laranja */
+}
+
+.product-category.salgados-veganos {
+    background-color: #12ffa7; /* Verde */
+}
+
 .product-category.pizzas {
-    background-color: #ffebcd; /* Cor suave para Pizzas */
-}
-
-.product-category.burgers {
-    background-color: #f0e68c; /* Cor suave para Hamburgueres */
-}
-
-.product-category.pastas {
-    background-color: #e0ffff; /* Cor suave para Massas */
-}
-
-.product-category.salads {
-    background-color: #fffacd; /* Cor suave para Saladas */
+    background-color: #ff0027; /* Vermelho */
 }
 
 /* Estilos para as imagens das categorias de produtos */
@@ -126,13 +147,6 @@ button:focus, a:focus {
     outline: 2px solid #ffd700;
 }
 
-/* Flexbox para layout responsivo */
-.product-category {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 /* SEO e Acessibilidade */
 img {
     max-width: 100%;
@@ -144,11 +158,4 @@ img {
 h1, h2, h3 {
     font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
     font-weight: 400;
-}
-
-/* Minificação de CSS */
-body, header, nav ul, nav ul li, nav ul li a, section, .product-category, footer, form, form label, form input, form button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
