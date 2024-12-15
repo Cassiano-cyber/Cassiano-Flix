@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const avaliacaoForm = document.getElementById('avaliacao-form');
 
   // Carregar avaliações do Firestore
-  db.collection('avaliacoes').orderBy('nome', 'desc').onSnapshot(snapshot => {
+  const q = query(collection(db, 'avaliacoes'), orderBy('nome', 'desc'));
+  onSnapshot(q, snapshot => {
     avaliacoesLista.innerHTML = '';
     snapshot.forEach(doc => {
       const avaliacao = doc.data();
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const nome = document.getElementById('nome').value;
     const comentario = document.getElementById('comentario').value;
 
-    db.collection('avaliacoes').add({
+    addDoc(collection(db, 'avaliacoes'), {
       nome: nome,
       comentario: comentario
     }).then(() => {
