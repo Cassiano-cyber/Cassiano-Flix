@@ -1,3 +1,9 @@
+// Importar as funções necessárias do Firebase Firestore
+import { getFirestore, collection, query, orderBy, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+// Inicializar Firestore
+const db = getFirestore(); // Isso já está sendo feito corretamente no seu HTML
+
 document.addEventListener('DOMContentLoaded', function() {
   const avaliacoesLista = document.getElementById('avaliacoes-lista');
   const avaliacaoForm = document.getElementById('avaliacao-form');
@@ -5,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Carregar avaliações do Firestore
   const q = query(collection(db, 'avaliacoes'), orderBy('nome', 'desc'));
   onSnapshot(q, snapshot => {
-    avaliacoesLista.innerHTML = '';
+    avaliacoesLista.innerHTML = ''; // Limpa a lista antes de adicionar novos dados
     snapshot.forEach(doc => {
       const avaliacao = doc.data();
       const div = document.createElement('div');
