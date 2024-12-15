@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const avaliacaoForm = document.getElementById('avaliacao-form');
 
   // Carregar avaliações do Firestore
-  db.collection('avaliacoes').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+  db.collection('avaliacoes').orderBy('nome', 'desc').onSnapshot(snapshot => {
     avaliacoesLista.innerHTML = '';
     snapshot.forEach(doc => {
       const avaliacao = doc.data();
@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     db.collection('avaliacoes').add({
       nome: nome,
-      comentario: comentario,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      comentario: comentario
     }).then(() => {
       avaliacaoForm.reset();
     }).catch(error => {
@@ -31,4 +30,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
