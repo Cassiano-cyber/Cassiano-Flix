@@ -1,7 +1,22 @@
-import { getFirestore, collection, query, orderBy, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+// Importar a função necessária para inicializar o Firebase
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, query, orderBy, onSnapshot, addDoc } from "firebase/firestore";
 
-// Inicializar Firestore
-const db = getFirestore(); // Isso já está sendo feito corretamente no seu HTML
+// Sua configuração do Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCgFRQYluZdsWMizR1ESBn_X9Aq_IIIOZk",
+  authDomain: "sistema-de-comentarios-972e6.firebaseapp.com",
+  projectId: "sistema-de-comentarios-972e6",
+  storageBucket: "sistema-de-comentarios-972e6.firebasestorage.app",
+  messagingSenderId: "872216046988",
+  appId: "1:872216046988:web:00f25480ca246b439bfaa9"
+};
+
+// Inicializar o Firebase
+const app = initializeApp(firebaseConfig);  // Inicializa o Firebase App
+
+// Inicializar o Firestore
+const db = getFirestore(app);  // Agora o Firestore usa a instância do Firebase
 
 document.addEventListener('DOMContentLoaded', function() {
   const avaliacoesLista = document.getElementById('avaliacoes-lista');
