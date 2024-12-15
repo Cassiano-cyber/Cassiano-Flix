@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibilidade com IE -->
     <title>Explosão Crocante</title>
     <meta name="description" content="Descubra nossos salgados personalizados, salgados veganos e pizzas deliciosas na Explosão Crocante.">
     <meta name="keywords" content="salgados, veganos, pizzas, Cassiano Flix">
     <meta name="author" content="Cassiano Flix">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Segurança e Cache -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Expires" content="0">
+    
     <!-- Firebase SDK -->
     <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-      import { getFirestore, collection, query, orderBy, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getFirestore, collection, query, orderBy, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+        
+        // Configurações do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgFRQYluZdsWMizR1ESBn_X9Aq_IIIOZk",
+            authDomain: "sistema-de-comentarios-972e6.firebaseapp.com",
+            projectId: "sistema-de-comentarios-972e6",
+            storageBucket: "sistema-de-comentarios-972e6.firebasestorage.app",
+            messagingSenderId: "872216046988",
+            appId: "1:872216046988:web:00f25480ca246b439bfaa9"
+        };
 
-      // Configurações do Firebase
-      const firebaseConfig = {
-        apiKey: "AIzaSyCgFRQYluZdsWMizR1ESBn_X9Aq_IIIOZk",
-        authDomain: "sistema-de-comentarios-972e6.firebaseapp.com",
-        projectId: "sistema-de-comentarios-972e6",
-        storageBucket: "sistema-de-comentarios-972e6.firebasestorage.app",
-        messagingSenderId: "872216046988",
-        appId: "1:872216046988:web:00f25480ca246b439bfaa9"
-      };
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-      // Inicializar Firebase
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      // Expor db para uso global
-      window.db = db;
+        // Expor db para uso global
+        window.db = db;
     </script>
 </head>
 <body>
