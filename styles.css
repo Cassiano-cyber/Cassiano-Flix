@@ -111,20 +111,115 @@ section {
     margin-bottom: 1em;
 }
 
-/* Formulário de Avaliação */
-form input, form textarea, form button {
-    font-size: 1.2em;
-    padding: 0.5em;
-    margin: 0.5em;
+/* Estilo para a seção de avaliações */
+#avaliacoes {
+    background-color: #fff;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    margin-top: 2em;
 }
 
-form button {
+#avaliacoes h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+#avaliacoes-lista {
+    text-align: left;
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#avaliacoes h3 {
+    font-size: 1.5em;
+    color: #ff6347;
+    margin-top: 1em;
+}
+#avaliacao-form {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#avaliacao-form input, #avaliacao-form textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#avaliacao-form button {
     background-color: #ff6347;
     color: white;
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-form button:hover {
-    background-color: #e5533b;
+#avaliacao-form button:hover {
+    background-color: #e5533d;
+}
+/* Estilo para a seção de contato */
+#contact {
+    background-color: #fff;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 2em;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #ff6347;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #e5533d;
 }
