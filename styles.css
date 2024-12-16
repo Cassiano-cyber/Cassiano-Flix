@@ -1,11 +1,70 @@
-/* Seção de Produtos */
+/* Importa as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
+
+/* Normalização de CSS */
+@import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
+
+/* Estilos Globais */
+body {
+    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(244, 244, 244);
+    font-size: 130%;
+    color: #333;
+}
+
+header {
+    background-color: #ff6347;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 130%;
+}
+
+nav {
+    text-align: center;
+    margin: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffd700; /* Amarelo */
+    font-size: 1.5em;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+}
+
+footer {
+    background-color: #ff6347;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Seção Produtos */
 #products {
-    background-color: #f8f8f8; /* Cor de fundo geral da seção de produtos */
+    background-color: #f8f8f8;
     padding: 2em;
     border-radius: 8px;
 }
 
-/* Categorias de Produtos */
 .product-category {
     display: flex;
     flex-direction: column;
@@ -16,43 +75,44 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Cores diferentes para cada categoria */
 .product-category.salgados {
-    background-color: #ffe5b4; /* Laranja suave */
-    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); /* Brilho laranja */
+    background-color: #ffe5b4;
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6);
 }
 
 .product-category.salgados-veganos {
-    background-color: #d4f5e8; /* Verde suave */
-    box-shadow: 0 4px 8px rgba(18, 255, 167, 0.6); /* Brilho verde */
+    background-color: #d4f5e8;
+    box-shadow: 0 4px 8px rgba(18, 255, 167, 0.6);
 }
 
 .product-category.pizzas {
-    background-color: #ffcdd2; /* Vermelho suave */
-    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6); /* Brilho vermelho */
+    background-color: #ffcdd2;
+    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6);
 }
 
-/* Estilo para imagens das categorias */
 .product-category img {
-    width: 80%; /* Largura ajustada para manter o design responsivo */
+    width: 80%;
     max-width: 400px;
     height: auto;
     margin: 1em 0;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Títulos das Categorias */
 .product-category h3 {
-    color: #ff6347; /* Destaque no título */
-    margin-top: 0.5em;
+    color: #ff6347;
     font-size: 1.6em;
 }
 
-/* Texto descritivo */
 .product-category p {
     color: #333;
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .product-category img {
+        width: 90%;
+    }
 }
