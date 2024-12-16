@@ -1,4 +1,4 @@
-/* Importa as fontes */
+* Importa as fontes */
 @import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
 
 /* Normalização de CSS */
@@ -45,7 +45,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; /* Efeito de brilho */
 }
 
 footer {
@@ -56,53 +56,71 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 130%;
 }
 
-/* Seção Produtos */
-#products {
-    background-color: #f8f8f8;
+/* Seção Principal */
+section {
+    display: block;
+    unicode-bidi: isolate;
     padding: 2em;
+    text-align: center;
+    margin-bottom: 2em;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 130%;
 }
 
+/* Seção de Produtos */
+#products {
+    background-color: #f8f8f8; /* Cor suave de fundo para a seção de produtos */
+}
+
+/* Categorias de Produtos com cores diferentes */
 .product-category {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2em;
+    margin-bottom: 40px;
     padding: 2em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Cores diferentes para cada categoria */
 .product-category.salgados {
-    background-color: #ffe5b4;
-    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6);
+    background-color: #ffe5b4; /* Laranja suave */
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); /* Brilho laranja */
 }
 
 .product-category.salgados-veganos {
-    background-color: #d4f5e8;
-    box-shadow: 0 4px 8px rgba(18, 255, 167, 0.6);
+    background-color: #d4f5e8; /* Verde suave */
+    box-shadow: 0 4px 8px rgba(18, 255, 167, 0.6); /* Brilho verde */
 }
 
 .product-category.pizzas {
-    background-color: #ffcdd2;
-    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6);
+    background-color: #ffcdd2; /* Vermelho suave */
+    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6); /* Brilho vermelho */
 }
 
+/* Estilos para as imagens das categorias de produtos */
 .product-category img {
-    width: 80%;
+    width: 80vw; /* Largura ajustada da imagem */
     max-width: 400px;
     height: auto;
-    margin: 1em 0;
+    margin: 20px 0;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Títulos das Categorias */
 .product-category h3 {
-    color: #ff6347;
+    color: #ff6347; /* Cor de destaque para o título */
+    margin-top: 0.5em;
     font-size: 1.6em;
 }
 
+/* Descrição dos produtos */
 .product-category p {
     color: #333;
     font-size: 1.2em;
@@ -110,9 +128,153 @@ footer {
     text-align: center;
 }
 
-/* Responsividade */
+/* Ajustes de layout para visualização em dispositivos móveis */
 @media (max-width: 768px) {
     .product-category img {
-        width: 90%;
+        width: 90vw;
     }
+}
+
+/* Lazy Loading para imagens */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Foco visível para botões e links */
+button:focus, a:focus {
+    outline: 2px solid #ffd700;
+}
+
+/* SEO e Acessibilidade */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
+    font-weight: 400;
+}
+
+/* Estilo para a seção de avaliações */
+#avaliacoes {
+    background-color: #fff;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 2em;
+}
+
+#avaliacoes h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+#avaliacoes-lista {
+    text-align: left;
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#avaliacoes h3 {
+    font-size: 1.5em;
+    color: #ff6347;
+    margin-top: 1em;
+}
+
+#avaliacao-form {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#avaliacao-form input, #avaliacao-form textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#avaliacao-form button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#avaliacao-form button:hover {
+    background-color: #e5533d;
+}
+
+/* Estilo para a seção de contato */
+#contact {
+    background-color: #fff;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 2em;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #ff6347;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #e5533d;
 }
