@@ -13,21 +13,17 @@ body {
     font-size: 130%;
     color: #333;
 }
-
+/* Ajuste do header */
 header {
-    background-color: #ff6347; /* Fundo laranja apenas no header */
-    color: white;
-    padding: 1em 0;
+    background-color: #ff6347; /* Mantém o fundo laranja */
+    color: white; /* Mantém o texto branco */
+    padding: 1.5em 0; /* Aumenta o espaçamento interno */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 130%;
+    font-size: 1.5em; /* Ajusta o tamanho da fonte */
 }
 
-nav {
-    text-align: center;
-    margin: 1em 0;
-}
-
+/* Ajuste do menu de navegação */
 nav ul {
     list-style: none;
     padding: 0;
@@ -37,15 +33,33 @@ nav ul {
     gap: 2em;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #ffd700; /* Amarelo */
-    font-size: 1.5em;
-    transition: text-shadow 0.3s ease-in-out;
+nav ul li {
+    position: relative;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: #ffd700; /* Mantém o amarelo original */
+    font-size: 1.2em;
+    padding: 0.5em 0; /* Espaçamento interno nos links */
+    display: block;
+}
+
+/* Efeito de hover para destaque */
 nav ul li a:hover {
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; /* Efeito de brilho */
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; /* Mantém o brilho */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    header {
+        padding: 1em 0; /* Reduz o padding para telas menores */
+    }
+    nav ul li a {
+        font-size: 1em; /* Reduz o tamanho da fonte */
+    }
+}
+
 }
 
 footer {
