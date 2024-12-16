@@ -219,6 +219,14 @@ section {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+/* Ajuste do tamanho da imagem na seção "home" para telas pequenas */
+@media (max-width: 768px) {
+    #home img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
 
 .contact-button:hover {
     background-color: #e5533d;
