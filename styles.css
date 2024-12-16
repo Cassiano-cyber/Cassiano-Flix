@@ -15,12 +15,11 @@ body {
 }
 
 header {
-    background-color: #ff6347;
+    background-color: #ff6347; /* Mantido o header como estava */
     color: white;
     padding: 1em 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 130%;
 }
 
 nav {
@@ -58,7 +57,7 @@ footer {
     width: 100%;
 }
 
-/* Seção Produtos */
+/* Seção de Produtos */
 #products {
     background-color: #f8f8f8;
     padding: 2em;
@@ -75,19 +74,23 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Cores dos produtos */
 .product-category.salgados {
-    background-color: #ffe5b4;
-    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6);
+    background-color: #ffe5b4; /* Laranja suave */
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); 
+    color: #5a3a00; /* Texto marrom */
 }
 
 .product-category.salgados-veganos {
-    background-color: #d4f5e8;
-    box-shadow: 0 4px 8px rgba(18, 255, 167, 0.6);
+    background-color: #4e937a; /* Verde escuro */
+    box-shadow: 0 4px 8px rgba(50, 100, 90, 0.6); /* Sombra verde escuro */
+    color: #e3f2e1; /* Texto claro para contraste */
 }
 
 .product-category.pizzas {
-    background-color: #ffcdd2;
-    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6);
+    background-color: #a83434; /* Vermelho escuro */
+    box-shadow: 0 4px 8px rgba(128, 0, 0, 0.6); /* Sombra vermelho escuro */
+    color: #ffe5e5; /* Texto claro para contraste */
 }
 
 .product-category img {
@@ -99,12 +102,11 @@ footer {
 }
 
 .product-category h3 {
-    color: #ff6347;
+    margin-top: 0.5em;
     font-size: 1.6em;
 }
 
 .product-category p {
-    color: #333;
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
