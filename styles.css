@@ -107,6 +107,7 @@ section {
     background-color: #ecbd66;
 ; /* Laranja suave */
     box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); /* Brilho laranja */
+    color: #ffffff;
 }
 
 .product-category.salgados-veganos {
@@ -118,7 +119,7 @@ section {
 .product-category.pizzas {
        background-color: #d8343894; /* Vermelho suave */
     box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6); /* Brilho vermelho */
-    color: #ffffff
+    color: #ffffff;
 }
 
 /* Estilos para as imagens */
