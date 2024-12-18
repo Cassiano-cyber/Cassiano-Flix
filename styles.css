@@ -9,9 +9,9 @@ body {
     font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
     margin: 0;
     padding: 0;
-    background-color: rgb(244, 244, 244);
+    background-color: #e59616;
     font-size: 130%;
-    color: #333;
+    color: #b7870e;
 }
 /* Ajuste do header */
 header {
@@ -83,6 +83,7 @@ section {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 130%;
+    background-color: #f5ddb0;
 }
 
 /* Seção de Produtos */
@@ -103,23 +104,24 @@ section {
 
 /* Cores diferentes para cada categoria */
 .product-category.salgados {
-    background-color: #ffe5b4; /* Laranja suave */
+    background-color: #ecbd66;
+; /* Laranja suave */
     box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); /* Brilho laranja */
 }
 
 .product-category.salgados-veganos {
-    background-color: #b6e0a6; /* Verde mais escuro */
+        background-color: #77cf61; /* Verde mais escuro */
     box-shadow: 0 4px 8px rgba(0, 128, 0, 0.6); /* Brilho verde escuro */
 }
 
 .product-category.pizzas {
-    background-color: #ffcccc; /* Vermelho suave */
+       background-color: #c63e23; /* Vermelho suave */
     box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6); /* Brilho vermelho */
 }
 
 /* Estilos para as imagens */
 .product-category img {
-    width: 200px;
+    width: 600px;
     height: auto;
     border-radius: 8px;
     margin-bottom: 1em;
