@@ -88,7 +88,7 @@ section {
 
 /* Seção de Produtos */
 #products {
-    background-color: #f8f8f8; /* Cor suave de fundo para a seção de produtos */
+    background-color: #b7870e; /* Cor suave de fundo para a seção de produtos */
 }
 
 /* Categorias de Produtos com cores diferentes */
@@ -146,7 +146,7 @@ section {
     text-align: left;
     margin-top: 1em;
     padding: 1em;
-    background-color: #f9f9f9;
+    background-color: #b7870e;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -187,7 +187,7 @@ section {
 }
 /* Estilo para a seção de contato */
 #contact {
-    background-color: #fff;
+    background-color: #b7870e;
     padding: 2em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
