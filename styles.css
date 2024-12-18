@@ -112,11 +112,13 @@ section {
 .product-category.salgados-veganos {
         background-color: #77cf614d; /* Verde mais claro */
     box-shadow: 0 4px 8px rgba(0, 128, 0, 0.6); /* Brilho verde escuro */
+    color: #ffffff;
 }
 
 .product-category.pizzas {
        background-color: #d8343894; /* Vermelho suave */
     box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6); /* Brilho vermelho */
+    color: #ffffff
 }
 
 /* Estilos para as imagens */
@@ -146,7 +148,7 @@ section {
     text-align: left;
     margin-top: 1em;
     padding: 1em;
-    background-color: #b7870e;
+    background-color: #dedede;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -187,7 +189,7 @@ section {
 }
 /* Estilo para a seção de contato */
 #contact {
-    background-color: #b7870e;
+    background-color: #edd19b;
     padding: 2em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
