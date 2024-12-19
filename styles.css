@@ -4,26 +4,38 @@
 /* Normalização de CSS */
 @import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
 
+/* Variáveis CSS */
+:root {
+    --primary-color: #ff6347;
+    --secondary-color: #ffd700;
+    --background-color: #f5ddb0;
+    --text-color: #b7870e;
+    --white-color: #ffffff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
 /* Estilos Globais */
 body {
     font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
     margin: 0;
     padding: 0;
-    background-color: #f5ddb0;
-    font-size: 130%;
-    color: #b7870e;
-}
-/* Ajuste do header */
-header {
-    background-color: #ff6347; /* Mantém o fundo laranja */
-    color: white; /* Mantém o texto branco */
-    padding: 1.5em 0; /* Aumenta o espaçamento interno */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 1.5em; /* Ajusta o tamanho da fonte */
+    background-color: var(--background-color);
+    font-size: 1.3rem;
+    color: var(--text-color);
 }
 
-/* Ajuste do menu de navegação */
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1.5em 0;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    font-size: 1.5em;
+}
+
+/* Menu de Navegação */
 nav ul {
     list-style: none;
     padding: 0;
@@ -39,38 +51,35 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #ffd700; /* Mantém o amarelo original */
+    color: var(--secondary-color);
     font-size: 1.2em;
-    padding: 0.5em 0; /* Espaçamento interno nos links */
+    padding: 0.5em 0;
     display: block;
 }
 
-/* Efeito de hover para destaque */
 nav ul li a:hover {
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; /* Mantém o brilho */
+    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color), 0 0 30px var(--secondary-color);
 }
 
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     header {
-        padding: 1em 0; /* Reduz o padding para telas menores */
+        padding: 1em 0;
     }
     nav ul li a {
-        font-size: 1em; /* Reduz o tamanho da fonte */
+        font-size: 1em;
     }
-}
-
 }
 
 footer {
-    background-color: #ff6347;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     text-align: center;
     padding: 1em 0;
     position: relative;
     bottom: 0;
     width: 100%;
-    font-size: 130%;
+    font-size: 1.3rem;
 }
 
 /* Seção Principal */
@@ -80,67 +89,67 @@ section {
     padding: 2em;
     text-align: center;
     margin-bottom: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 130%;
-    background-color: #f5ddb0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    font-size: 1.3rem;
+    background-color: var(--background-color);
 }
 
 /* Seção de Produtos */
 #products {
-    background-color: #edd19b; /* Cor suave de fundo para a seção de produtos */
+    background-color: #edd19b;
 }
 
-/* Categorias de Produtos com cores diferentes */
+/* Categorias de Produtos */
 .product-category {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
     padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
-/* Cores diferentes para cada categoria */
 .product-category.salgados {
     background-color: #ecbd66;
-; /* Laranja suave */
-    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6); /* Brilho laranja */
-    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6);
+    color: var(--white-color);
 }
 
 .product-category.salgados-veganos {
-        background-color: #77cf614d; /* Verde mais claro */
-    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.6); /* Brilho verde escuro */
-    color: #ffffff;
+    background-color: #77cf614d;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.6);
+    color: var(--white-color);
 }
 
 .product-category.pizzas {
-       background-color: #d8343894; /* Vermelho suave */
-    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6); /* Brilho vermelho */
-    color: #ffffff;
+    background-color: #d8343894;
+    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6);
+    color: var(--white-color);
 }
 
 /* Estilos para as imagens */
 .product-category img {
     width: 600px;
     height: auto;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     margin-bottom: 1em;
 }
-/*Responsividade para celulares*/
+
+/* Responsividade para imagens em dispositivos móveis */
 @media (max-width: 768px) {
     .product-category img {
-        width: 200px; /*largura*/
-/* Estilo para a seção de avaliações */
+        width: 200px;
     }
 }
+
+/* Seção de Avaliações */
 #avaliacoes {
-    background-color: #fff;
+    background-color: var(--white-color);
     padding: 2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
     margin-top: 2em;
 }
 
@@ -155,15 +164,16 @@ section {
     margin-top: 1em;
     padding: 1em;
     background-color: #dedede;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 #avaliacoes h3 {
     font-size: 1.5em;
-    color: #ff6347;
+    color: var(--primary-color);
     margin-top: 1em;
 }
+
 #avaliacao-form {
     margin-top: 1.5em;
     display: flex;
@@ -180,8 +190,8 @@ section {
 }
 
 #avaliacao-form button {
-    background-color: #ff6347;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     border: none;
     padding: 0.75em;
     border-radius: 4px;
@@ -193,12 +203,13 @@ section {
 #avaliacao-form button:hover {
     background-color: #e5533d;
 }
-/* Estilo para a seção de contato */
+
+/* Seção de Contato */
 #contact {
     background-color: #edd19b;
     padding: 2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
     margin-top: 2em;
 }
 
@@ -223,8 +234,9 @@ section {
 .contact-form label {
     font-weight: bold;
     margin-bottom: 0.5em;
-    color: #ff6347;
+    color: var(--primary-color);
 }
+
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 0.75em;
@@ -234,8 +246,8 @@ section {
 }
 
 .contact-button {
-    background-color: #ff6347;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     border: none;
     padding: 0.75em;
     border-radius: 4px;
@@ -243,15 +255,15 @@ section {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+.contact-button:hover {
+    background-color: #e5533d;
+}
+
 /* Ajuste do tamanho da imagem na seção "home" para telas pequenas */
 @media (max-width: 768px) {
     #home img {
         max-width: 100%;
         height: auto;
     }
-}
-
-
-.contact-button:hover {
-    background-color: #e5533d;
 }
