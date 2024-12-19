@@ -124,13 +124,18 @@ section {
 
 /* Estilos para as imagens */
 .product-category img {
-    width: 200px;
+    width: 600px;
     height: auto;
     border-radius: 8px;
     margin-bottom: 1em;
 }
-
+/*Responsividade para celulares*/
+@media (max-width: 768px) {
+    .product-category img {
+        width: 200px; /*largura*/
 /* Estilo para a seção de avaliações */
+    }
+}
 #avaliacoes {
     background-color: #fff;
     padding: 2em;
