@@ -1,6 +1,20 @@
+// Importar as funções necessárias do Firebase Firestore
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getFirestore, collection, query, orderBy, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-const db = getFirestore();
+// Configurações do Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCgFRQYluZdsWMizR1ESBn_X9Aq_IIIOZk",
+  authDomain: "sistema-de-comentarios-972e6.firebaseapp.com",
+  projectId: "sistema-de-comentarios-972e6",
+  storageBucket: "sistema-de-comentarios-972e6.appspot.com",
+  messagingSenderId: "872216046988",
+  appId: "1:872216046988:web:00f25480ca246b439bfaa9"
+};
+
+// Inicializar Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 document.addEventListener('DOMContentLoaded', function() {
   const avaliacoesLista = document.getElementById('avaliacoes-lista');
